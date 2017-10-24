@@ -21,8 +21,16 @@ public class LevelManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadLevel(string scene)
+    public void LoadLevel(int scene)
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene(scene);
+        GameManager.instance.Lvl++;
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(1);
+        GameManager.instance.Lvl = 1;
+        GameManager.instance.Score = 0;
     }
 }

@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour {
 
-    
+    public Text scoreText, lvlText;
+
+
     private int score;
-    private int nivel;
+    private int lvl;
+
 
     public static GameManager instance;
 
@@ -28,12 +32,15 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         score = 0;
+        lvl = 1;
+
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
-		
+        scoreText.text = "Score\n"+score;
+        lvlText.text = "Nivel\n" + lvl;
 	}
 
     public int Score
@@ -49,16 +56,16 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public int Nivel
+    public int Lvl
     {
         get
         {
-            return nivel;
+            return lvl;
         }
 
         set
         {
-            nivel = value;
+            lvl = value;
         }
     }
 
@@ -66,4 +73,21 @@ public class GameManager : MonoBehaviour {
     {
         
     }
+
+    public void ChangeLvl()
+    {
+        if(Lvl <= 4)
+        {
+            LevelManager.instance.LoadLevel(1);
+        }
+        else if(Lvl <=8)
+        {
+            LevelManager.instance.LoadLevel(2);
+        }
+        else
+        {
+            LevelManager.instance.LoadLevel(3);
+        }
+    }
+
 }

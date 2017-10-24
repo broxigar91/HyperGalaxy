@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour {
     {
         if(collision.gameObject.tag!="Player")
         {
-            //GameManager.instance.Score += collision.gameObject.GetComponent<Enemy>().points;
+            GameManager.instance.Score += collision.gameObject.GetComponent<Enemy>().points;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

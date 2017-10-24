@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class Row : MonoBehaviour
 {
-
-    public GameObject go;
-
-    EnemyContainer ec;
-
-
-
+    
     // Update is called once per frame
     void Update()
     {

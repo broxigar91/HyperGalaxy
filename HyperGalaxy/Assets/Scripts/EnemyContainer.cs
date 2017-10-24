@@ -39,7 +39,8 @@ public class EnemyContainer : MonoBehaviour {
 
         if(transform.childCount==0)
         {
-            Debug.Log("WIN");
+            GameManager.instance.ChangeLvl();
+            
         }
 	}
 }
