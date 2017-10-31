@@ -36,5 +36,6 @@ public class Player : MonoBehaviour {
     {
         Transform bulletPos= GameObject.Find("BulletStart").transform;
         Instantiate(projectile,bulletPos.position ,Quaternion.identity);
+        SoundManager.instance.PlayEfx(0);
     }
 }

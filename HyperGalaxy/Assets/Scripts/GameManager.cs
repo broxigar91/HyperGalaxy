@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour {
     public Text scoreText, lvlText;
 
 
-    private int score;
-    private int lvl;
+    private int score,lvl,lifes;
+    
 
 
     public static GameManager instance;
@@ -33,12 +33,19 @@ public class GameManager : MonoBehaviour {
     void Start () {
         score = 0;
         lvl = 1;
-
+        lifes = 3;
 	}
-	
 
-	// Update is called once per frame
-	void Update () {
+
+    public void StartGame()
+    {
+        scoreText.gameObject.SetActive(true);
+        lvlText.gameObject.SetActive(true);
+        LevelManager.instance.ResetGame();
+    }
+
+    // Update is called once per frame
+    void Update () {
         scoreText.text = "Score\n"+score;
         lvlText.text = "Nivel\n" + lvl;
 	}
@@ -69,9 +76,22 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public int Lifes
+    {
+        get
+        {
+            return lifes;
+        }
+
+        set
+        {
+            lifes = value;
+        }
+    }
+
     public void Save()
     {
-        
+        JsonUtility.ToJson(score);
     }
 
     public void ChangeLvl()

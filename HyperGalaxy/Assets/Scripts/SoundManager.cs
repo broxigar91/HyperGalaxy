@@ -29,16 +29,13 @@ public class SoundManager : MonoBehaviour {
 
     private void Start()
     {
-        
+        PlayMusic(0);
     }
 
-
     //metodo que reproduce un solo clip de audio, en concreto efectos de audio como explosiones, lasers, etc
-    public void PlaySingle(AudioClip clip)
+    public void PlayEfx(int index)
     {
-        efx.clip = clip;
-
-        efx.Play();
+        efx.PlayOneShot(efxClips[index],0.7f);
     }
 
     public void PlayMusic(int index)
@@ -47,11 +44,4 @@ public class SoundManager : MonoBehaviour {
         music.loop = true;
         music.Play();
     }
-
-    
-
-
-
-
-
 }
