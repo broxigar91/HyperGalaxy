@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  productGUID: 66a39c66ee2aeeb4e9af93c213be0352
+  productGUID: bcfc801921b4c8948a6b50c810e296a8
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -606,12 +606,11 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled:
-    UNet: 1
+  cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 9270371b-64ee-43e7-98b4-f223b5594d09
-  projectName: HyperGalaxy
+  cloudProjectId: eb3fc191-9ff0-4567-bd49-945784e11654
+  projectName: HyperGalaxy (2)
   organizationId: raegar91
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
